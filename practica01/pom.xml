@@ -8,11 +8,11 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.PracticaExamen</groupId>
-	<artifactId>PracticaExamen</artifactId>
+	<groupId>com.practica01</groupId>
+	<artifactId>practica01</artifactId>
 	<version>1</version>
-	<name>PracticaExamen</name>
-	<description>Practica grupal de examen de Web</description>
+	<name>practica01</name>
+	<description>Practica para examen de Web</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
