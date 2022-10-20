@@ -1,1 +1,24 @@
 Aquí se va a añadir el codigo de la base de datos
+
+CREATE DATABASE `practica` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+drop schema practica ;
+drop user usuario_practica;
+
+
+/*Se crea la base de datos */
+CREATE SCHEMA practica ;
+/*Se crea un usuario para la base de datos llamado "usuario_prueba" y tiene la contraseña "Usuario_Clave."*/
+create user 'usuario_practica'@'%' identified by 'la_Clave';
+/*Se asignan los prvilegios sobr ela base de datos TechShop al usuario creado */
+grant all privileges on practica.* to 'usuario_practica'@'%';
+flush privileges;
+
+CREATE TABLE `estado` (
+  `idPais` int NOT NULL AUTO_INCREMENT,
+  `nomEstado` varchar(45) DEFAULT NULL,
+  `capital` varchar(45) DEFAULT NULL,
+  `poblacion` int DEFAULT NULL,
+  `costas` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idPais`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
