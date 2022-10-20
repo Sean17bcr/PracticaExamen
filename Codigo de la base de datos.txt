@@ -1,9 +1,7 @@
 Aquí se va a añadir el codigo de la base de datos
 
-CREATE DATABASE `practica` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-
-drop schema practica ;
-drop user usuario_practica;
+/*drop schema practica ;
+drop user usuario_practica;*/
 
 
 /*Se crea la base de datos */
@@ -14,7 +12,7 @@ create user 'usuario_practica'@'%' identified by 'la_Clave';
 grant all privileges on practica.* to 'usuario_practica'@'%';
 flush privileges;
 
-CREATE TABLE `estado` (
+CREATE TABLE practica.estado (
   `idPais` int NOT NULL AUTO_INCREMENT,
   `nomEstado` varchar(45) DEFAULT NULL,
   `capital` varchar(45) DEFAULT NULL,
