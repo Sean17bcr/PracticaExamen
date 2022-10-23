@@ -14,7 +14,7 @@
 	<name>practica01</name>
 	<description>Practica para examen de Web</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

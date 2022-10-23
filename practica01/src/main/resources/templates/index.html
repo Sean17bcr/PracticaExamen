@@ -26,19 +26,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="estado ${estados}">
-                        <td>[[${estado.nomEstado}]]</td>
-                        <td>[[${cliente.capital}]]</td>
-                        <td>[[${cliente.poblacion}]]</td>
-                        <td>[[${cliente.costas}]]</td>
-                        <td><a th:href="@{/eliminarCliente/}+ ${cliente.idCliente}">Eliminar</td>
-                        <td><a th:href="@{/modificarCliente/}+ ${cliente.idCliente}">Modificar</td>
+                    <tr th:each="estados: ${estado}">
+                        <td>[[${estados.nomEstado}]]</td>
+                        <td>[[${estados.capital}]]</td>
+                        <td>[[${estados.poblacion}]]</td>
+                        <td>[[${estados.costas}]]</td>
+                        <td><a th:href="@{/eliminarEstado/}+ ${estados.idPais}">Eliminar</td>
+                        <td><a th:href="@{/modificarEstado/}+ ${estados.idPais}">Modificar</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div th:if="${clientes ==nul or !clientes.empty}">
-            <h2>No se tienen clientes que mostrar!</h2>
+        <div th:if="${estados ==nul or !estados.empty}">
+            <h2>No se tienen estados que mostrar!</h2>
         </div>
         
         <footer th:replace="layout/plantilla :: footer"/>
