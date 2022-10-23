@@ -1,0 +1,42 @@
+
+package com.practica01.service;
+
+import com.practica01.dao.EstadoDao;
+import com.practica01.domain.Estado;
+import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EstadoServiceImpl implements EstadoService{
+    
+    @Autowired
+    private EstadoDao estadoDao;
+    
+    @Override
+    @Transactional(readOnly=true)
+    public List<Estado> getEstados(){
+        return(List<Estado>)estadoDao.findAll();
+    }
+    
+    @Override
+    @Transactional(readOnly=true)
+    public Estado getEstado(Estado estado){
+        return estadoDao.findById(estado.getIdPais()) .orElse(null);
+    }
+    
+    @Override
+    @Transactional
+    public void save(Estado estado){
+        estadoDao.save(estado);
+    }
+    
+    
+    @Override
+    @Transactional
+    public void delete(Estado estado){
+        estadoDao.delete(estado);
+    }
+        
+}

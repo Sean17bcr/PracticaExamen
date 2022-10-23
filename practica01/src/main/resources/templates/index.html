@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html
+    xmlns:th="http://wwww.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Prueba</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <header th:replace="layout/plantilla :: header"/>
+        
+        <div>Saludos</div>
+        <p> [[${mensaje}]]</p>
+
+        <h2>Listado de Estados</h2>
+        <a th:href="@{/estado/nuevo}">Nuevo Estado</a>
+        <div th:if="${estados !=nul and !estados.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre del Estado</th>
+                        <th>Capital</th>
+                        <th>Poblacion</th>
+                        <th>Costas</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estado ${estados}">
+                        <td>[[${estado.nomEstado}]]</td>
+                        <td>[[${cliente.capital}]]</td>
+                        <td>[[${cliente.poblacion}]]</td>
+                        <td>[[${cliente.costas}]]</td>
+                        <td><a th:href="@{/eliminarCliente/}+ ${cliente.idCliente}">Eliminar</td>
+                        <td><a th:href="@{/modificarCliente/}+ ${cliente.idCliente}">Modificar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:if="${clientes ==nul or !clientes.empty}">
+            <h2>No se tienen clientes que mostrar!</h2>
+        </div>
+        
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>
