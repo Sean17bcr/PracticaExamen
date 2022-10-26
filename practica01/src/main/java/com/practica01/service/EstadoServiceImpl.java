@@ -16,6 +16,7 @@ public class EstadoServiceImpl implements EstadoService{
     
     @Override
     @Transactional(readOnly=true)
+    
     public List<Estado> getEstados(){
         return(List<Estado>)estadoDao.findAll();
     }
@@ -23,7 +24,7 @@ public class EstadoServiceImpl implements EstadoService{
     @Override
     @Transactional(readOnly=true)
     public Estado getEstado(Estado estado){
-        return estadoDao.findById(estado.getIdPais()) .orElse(null);
+        return estadoDao.findById(estado.getIdPais()).orElse(null);
     }
     
     @Override

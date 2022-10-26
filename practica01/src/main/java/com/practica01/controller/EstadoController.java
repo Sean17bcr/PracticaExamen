@@ -19,6 +19,7 @@ public class EstadoController {
     public String nuevoEstado(Estado estado){
         return "modificarEstado";
     }
+    
     @PostMapping("/estado/guardar")
     public String guardarEstado(Estado estado){
         estadoService.save(estado);

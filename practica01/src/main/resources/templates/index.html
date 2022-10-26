@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html
     xmlns:th="http://wwww.thymeleaf.org">
+    
     <head>
         <title>Prueba</title>
         <meta charset="UTF-8">
@@ -13,7 +14,7 @@
 
         <h2>Listado de Estados</h2>
         <a th:href="@{/estado/nuevo}">Nuevo Estado</a>
-        <div th:if="${estados !=nul and !estados.empty}">
+        <div th:if="${estados !=null and !estados.empty}">
             <table border="1">
                 <thead>
                     <tr>
