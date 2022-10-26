@@ -16,7 +16,7 @@
         <hr/>
         <form th:action="@{/estado/guardar}" method="post" th:object="${estado}">
 
-            <input type="hidden" name ="idCliente" th:field="*{nombre}"/>
+            <input type="hidden" name ="idPais" th:field="*{idPais}"/>
 
             <label for="nomEstado">Nombre del Pais</label>
             <input type="text" name="nombre" th:field="*{nomEstado}"/>

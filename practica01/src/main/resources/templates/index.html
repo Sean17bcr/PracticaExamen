@@ -27,13 +27,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="estados: ${estado}">
-                        <td>[[${estados.nomEstado}]]</td>
-                        <td>[[${estados.capital}]]</td>
-                        <td>[[${estados.poblacion}]]</td>
-                        <td>[[${estados.costas}]]</td>
-                        <td><a th:href="@{/eliminarEstado/}+ ${estados.idPais}">Eliminar</td>
-                        <td><a th:href="@{/modificarEstado/}+ ${estados.idPais}">Modificar</td>
+                    <tr th:each="estado: ${estados}">
+                        <td>[[${estado.nomEstado}]]</td>
+                        <td>[[${estado.capital}]]</td>
+                        <td>[[${estado.poblacion}]]</td>
+                        <td>[[${estado.costas}]]</td>
+                        <td><a th:href="@{/eliminarEstado/}+ ${estado.idPais}">Eliminar</td>
+                        <td><a th:href="@{/modificarEstado/}+ ${estado.idPais}">Modificar</td>
                     </tr>
                 </tbody>
             </table>
