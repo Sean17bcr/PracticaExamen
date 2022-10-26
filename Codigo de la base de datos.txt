@@ -13,18 +13,10 @@ grant all privileges on practica.* to 'usuario_practica'@'%';
 flush privileges;
 
 CREATE TABLE practica.estado (
-  idPais INT NOT NULL AUTO_INCREMENT,
-  nomEstado VARCHAR(45) NOT NULL,
-  capital VARCHAR(45) NOT NULL,
-  poblacion VARCHAR(45) NOT NULL,
-  costas VARCHAR(45) NOT NULL,
+  `idPais` int NOT NULL AUTO_INCREMENT,
+  `nomEstado` varchar(45) DEFAULT NULL,
+  `capital` varchar(45) DEFAULT NULL,
+  `poblacion` int DEFAULT NULL,
+  `costas` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPais`)
-)
-ENGINE=InnoDB 
-DEFAULT CHARSET=utf8mb4 
-COLLATE=utf8mb4_0900_ai_ci;
-
-INSERT INTO practica.estado (idPais, nomEstado, capital, poblacion, costas) VALUES 
-(1,'Costa Rica', 'San Jose', '123456', 'Antlatico y Pacifico'),
-(2,'Uruguay',  'Montevideo', '654321', 'Antlatico'),
-(3,'Brasil', 'Brasilia', '123654', 'Antlatico');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
